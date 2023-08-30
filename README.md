@@ -19,13 +19,16 @@
 # 1. Functions in JavaScript
  Functions are subprograms with repeating JavaScript statements that are grouped into a block and called using the function name and optional arguments. Functions in JavaScript are real objects (first-class objects) and variables can be assigned to them. Likewise, functions can be used as parameters or return values of functions.
 
+## There are several ways to create a function in JavaScript:
+### Function declaration
+
  - a function is introduced with the keyword `function`
  - followed by the function name and the pair of parentheses `()`
  - function names are subject to the same restrictions as variable names
  - within the pair of parentheses optionally a list of formal parameters can be noted, several parameters are separated with `,`
  - the code or statement is written between the braces `{}`
 
- [Complete Code](https://github.com/BellaMrx/...index.html) --> **Examples/Part_1/...** 
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_1/script.js) --> **Examples/Part_1/...** 
    ```
     function sum(parameter1, parameter2) {
         // Code for function
