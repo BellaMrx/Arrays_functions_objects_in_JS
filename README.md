@@ -64,3 +64,34 @@ With a function declaration the function must be given a name to be able to call
 
 
 ## Call functions and function parameters 
+Parameters are placeholders for current values - which are called arguments. In function `sum(param1, param2)` `param1` and `param2` are parameters, when calling `sum(200, 100)` current values are used as arguments.
+
+If the function has been defined, it can be called via the function name. If a function expects parameters, these are grouped between brackets `()`, individual parameters are separated with a comma `,`. The brackets `()` after a function call must always be set even if the function does not contain any parameters.
+
+   ```
+    function sum() {
+        // Code for function
+    }
+    sum();
+   ```
+
+When a function is called with fewer or more arguments than parameters were specified in the function declaration. If too few arguments were used in the call, the missing arguments are initialized with the default value `undefined`.
+
+   ```
+    function exampleFunc(param1) {
+        console.log(param1);    // Output: undefined
+    }
+    exampleFunc();
+   ```
+Here the function `exampleFunc()` was called without an argument, therefore the value of the parameter `param1` in the function was initialized with the default value `undefined`. Not necessarily to imitate but that's how you could react to it:
+
+   ```
+    function exampleFunc(param1) {
+        if (param1 === undefined) {
+            console.log("exampleFunc(): No argument!");
+        } else {
+        console.log(param1);
+        }
+    }
+   ```
+
