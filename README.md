@@ -152,7 +152,7 @@ With the rest parameter there is the possibility to use a function with any numb
     console.log(sumAll(100, 200, 300, 400));    // Output: 1000
    ```
 
-The first parameter with `iVal` is an ordinary parameter with the value 100. The remaining parameters are defined with `_myargs` (200, 300, 400). The remaining parameters are accessed with the `forEach() ` method, which calls the function written in `myargs` for each value of the array. The current value is passed to `val` as a parameter in each case. Thus, each value in the `myargs` array is added to the `sum` variable and returned at the end.
+The first parameter with `iVal` is an ordinary parameter with the value 100. The remaining parameters are defined with `_myargs` (200, 300, 400). The remaining parameters are accessed with the `forEach()` method, which calls the function written in `myargs` for each value of the array. The current value is passed to `val` as a parameter in each case. Thus, each value in the `myargs` array is added to the `sum` variable and returned at the end.
 
 It is somewhat clearer with the Arrow function notation:
    ```
@@ -162,3 +162,27 @@ It is somewhat clearer with the Arrow function notation:
         return sum;
     }
    ```
+
+## Return value of a function
+If a value is to be returned from a function, a `return` statement must be used. The `return` statement specifies the value to be returned. Functions without a `return` statement use a default value which is `undefined` in most cases. After a `return` statement in a function, execution returns to the caller.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_6/script.js) --> **Examples/Part_6/...** 
+   ```
+    let isDebug = true;
+
+    function debugMessage() {
+        if (isDebug) {
+            return 'Debug mode is active';
+        }
+        return 'Debug mode is deactivated';
+    }
+
+    var message = debugMessage;     // assign function to variable
+    console.log(typeof message);    // function
+    var txt = message();            // call debugMessage()
+    console.log(txt);               // Output: Debug mode is active
+    isDebug = false;
+    console.log(message());         // Output: Debug mode is deactivated
+   ```
+
+Here, the `debugMessage` function was passed to the `message` variable rather than calling the `debugMessage` function and passing the return value to `message`. With this assignment, a variable `message` was created that points to the function object `debugMessage` and can be called explicitly as a function practically like `debugMessage`.
