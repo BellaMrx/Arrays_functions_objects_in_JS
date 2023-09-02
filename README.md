@@ -44,6 +44,7 @@ The function is executed when the function `sum()` is called with the arguments 
 
 ### Function expression
 A function expression works similarly to the function declaration, except that the function is assigned to a variable, and this reference variable then refers to the function object and can be used. A function expression omits a function name, which makes it an anonymous function.
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_2/script.js) --> **Examples/Part_2/...** 
    ```
     let sum = function(parameter1, parameter2) {
@@ -89,6 +90,7 @@ Here the function `exampleFunc()` was called without an argument, therefore the 
    ```
 
 Alternatively, you can also continue working with a function if default values are used for omitted arguments. JavaScript knows the principle of default parameters when no corresponding argument has been passed to the function. Thanks to default parameters, functions can be called with none, one or two arguments:
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_3/script.js) --> **Examples/Part_3/...** 
    ```
     function userTemplate(fname = "Joe", lname = "Public") {
@@ -111,6 +113,7 @@ Alternatively, you can also continue working with a function if default values a
    ```
 
 If a function is to be called with arguments, it can be accessed with the **arguments object**. The **arguments object** is an array-like object with arguments `arguments[n]`, `n` stands for the number of arguments. The first argument starts with `arguments[0]`. The number of arguments are determined with `arguments.length`.
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_4/script.js) --> **Examples/Part_4/...** 
    ```
     function sumAll() {
@@ -129,6 +132,7 @@ If a function is to be called with arguments, it can be accessed with the **argu
 Here all passed values are added using the **arguments object**. In practice, this is now implemented using the **Rest parameter**.
 
 With the rest parameter there is the possibility to use a function with any number of function parameters. The rest parameter is a real array.
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_5/script.js) --> **Examples/Part_5/...** 
    ```
     function sumAll(iVal, ...myargs) {
@@ -153,6 +157,7 @@ It is somewhat clearer with the Arrow function notation:
 
 ## Return value of a function
 If a value is to be returned from a function, a `return` statement must be used. The `return` statement specifies the value to be returned. Functions without a `return` statement use a default value which is `undefined` in most cases. After a `return` statement in a function, execution returns to the caller.
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_6/script.js) --> **Examples/Part_6/...** 
    ```
     let isDebug = true;
@@ -217,6 +222,7 @@ For this there is an alternative the keyword `let`, which is used instead of `va
 With the keyword `let` it becomes possible to restrict the scope of a variable to individual code blocks.
 
 In JavaScript it is also possible to define functions within functions, so that they are only usable and valid within the function:
+
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_7/script.js) --> **Examples/Part_7/...** 
    ```
     function divide(x, y) {
@@ -247,3 +253,72 @@ When using multiple parameters:
     let sum = (param1 + param2) => param1 + param2;
     console.log(sum(200, 400));     // Output: 600   
    ```
+
+The shorter version of the function:
+   ```
+    let sum = function(param1, param2) {
+        return param1 + param2;
+    }
+   ```
+
+For the arrow function the function body is omitted. This is only possible if the statement of the function consists of only one statement. If there are several statements, the curly brackets `{}` must also be noted:
+   ```
+    let debug = message => {
+    console.log("debug output -> ");
+    console.log(message);
+    console.log("<- debug output");
+    }
+
+    let val = 9876;
+    debug("Current value val (" + val + ")");
+   ```
+
+As soon as the function consists of several lines, a 'return' statement must be used:
+   ```
+    let multiply = (param1, param2) => {
+        console.log("Multiplication is executed");  
+        return param1 + param2;    
+    }
+    console.log(multiply(4, 20));  
+   ```
+
+For a function without parameters, the empty function brackets `()` must be noted:
+   ```
+    let noPara = () => console.log("Function without parameter"); 
+    noPara();
+   ```
+
+## Use functions in a website
+When a button has been clicked (`click` event), it is intercepted with a so-called event listener (`ducoment.addEventListener()`) and then a corresponding JavaScript function (`calculateSum()` and `calculateMultiply()`). In the function, the corresponding values of the `input` element are read, calculated and passed to the JavaScript function (`showResult`) for output, and the output of the calculation then appears in a text box.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_8/script.js) --> **Examples/Part_8/calc.js...** 
+   ```
+    document.addEventListener('DOMContentLoaded', function() {
+        let button1 = document.getElementById('button-calculate-sum');
+        button1.addEventListener('click', calculateSum);
+        let button2 = document.getElementById('button-calculate-multiply');
+        button2.addEventListener('click', calculateMultiply);
+    });
+
+    function calculateSum() {
+        let x = parseInt(document.getElementById('field1').value);
+        let y = parseInt(document.getElementById('field2').value);
+        let result = x + y;
+        showResult(result);
+    }
+
+    function calculateMultiply() {
+        let x = parseInt(document.getElementById('field1').value);
+        let y = parseInt(document.getElementById('field2').value);
+        let result = x * y;
+        showResult(result);
+    }
+
+    function showResult(result) {
+        let resultField = document.getElementById('result');
+        resultField.value = result;
+        console.log(result);
+    }
+   ```
+
+ ![Preview](images/Preview_Part_8.png)
