@@ -13,3 +13,5 @@ var txt = message();            // call debugMessage()
 console.log(txt);               // Output: Debug mode is active
 isDebug = false;
 console.log(message());         // Output: Debug mode is deactivated
+
+

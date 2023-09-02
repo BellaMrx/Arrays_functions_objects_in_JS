@@ -186,3 +186,68 @@ If a value is to be returned from a function, a `return` statement must be used.
    ```
 
 Here, the `debugMessage` function was passed to the `message` variable rather than calling the `debugMessage` function and passing the return value to `message`. With this assignment, a variable `message` was created that points to the function object `debugMessage` and can be called explicitly as a function practically like `debugMessage`.
+
+
+## The scope of variables in a function
+Each function creates a new scope, but not a block scope as it would be the case in other programming languages.
+
+   ```
+    let iVal = 222;     // global variable
+
+    function simple(parameter1) {
+        if (parameter1) {
+            var sVal = 444;
+        }
+        return sVal + iVal;     // possible because of variables hosting
+    }
+
+    let sumUp = simple(true);
+    console.log(sumUp);
+    console.log(sVal + iVal);   // Error: sVal is unknown
+   ```
+
+The variable `iVal` is a global variable and can be used both inside and outside the function. The variable `sVal` can only be used in the function `simple()`. Therefore `console.log(sVal + iVal)`, will result in the error message. This is the scope that JavaScript generates for each function.
+
+However, JavaScript does not create a block scope inside the `if` block here. JavaScript uses variable hosting here:
+   ```
+    function simple(parameter1) {
+        var sVal;
+        if (parameter1) {
+            sVal = 444;
+        }
+        return sVal + iVal;
+    }
+   ```
+
+That a variable is declared inside an `if` block within a function with `var` and is also used outside the `if` block within the function is not always desired and can lead to errors.
+
+For this there is an alternative the keyword `let`, which is used instead of `var`. A `let` variable gets a block scope and is thus only usable in the current code block:
+   ```
+    function simple(parameter1) {
+        if (parameter1) {
+            let sVal = 444;     // block scope with let
+            console.log(sVal);  // sVal now only valid within the if block
+        }
+        return sVal + iVal;     // Error : sVal is unknown
+    }
+   ```
+With the keyword `let` it becomes possible to restrict the scope of a variable to individual code blocks.
+
+In JavaScript it is also possible to define functions within functions, so that they are only usable and valid within the function:
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_7/script.js) --> **Examples/Part_7/...** 
+   ```
+    function divide(x, y) {
+        return normalize(x) / normalize(y);
+
+        function normalize(val) {
+            if (val == 0) {
+                return 1;
+            }
+            return val;
+        }
+    }
+    console.log(divide(4, 0));
+   ```
+
+Inside the function `normalize()` is called, which checks if one of the values is 0, and then makes it a 1 if necessary. Calling the function `normalize()` outside the function `divide()` would lead to an error.
