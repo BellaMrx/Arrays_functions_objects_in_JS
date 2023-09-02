@@ -6,7 +6,7 @@
 
 ## Content
  1. Functions in JavaScript
- 2. 
+ 2. Arrays
  3. 
  4. 
  5. 
@@ -291,7 +291,7 @@ For a function without parameters, the empty function brackets `()` must be note
 ## Use functions in a website
 When a button has been clicked (`click` event), it is intercepted with a so-called event listener (`ducoment.addEventListener()`) and then a corresponding JavaScript function (`calculateSum()` and `calculateMultiply()`). In the function, the corresponding values of the `input` element are read, calculated and passed to the JavaScript function (`showResult`) for output, and the output of the calculation then appears in a text box.
 
- [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_8/script.js) --> **Examples/Part_8/calc.js...** 
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_8) --> **Examples/Part_8/calc.js...** 
    ```
     document.addEventListener('DOMContentLoaded', function() {
         let button1 = document.getElementById('button-calculate-sum');
@@ -322,3 +322,63 @@ When a button has been clicked (`click` event), it is intercepted with a so-call
    ```
 
  ![Preview](images/Preview_Part_8.png)
+
+
+# 2. Arrays
+If several values are to be stored in a variable, this is possible with an array. An array is created by assigning several values to a variable in a square bracket `[]`.
+   ```
+    let user = ["Ali", "Jane", "Pedro"];
+   ```
+
+same without array:
+   ```
+    let user01 = "Ali";
+    let user01 = "Jane";
+    let user01 = "Pedro";
+   ```
+
+If there are many entries in the array, it is better to list the values one below the other:
+   ```
+    let user = [
+        "Ali", 
+        "Jane", 
+        "Pedro",
+        "Wiktoria",
+        "Yui"
+    ];
+   ```
+
+Arrays can also contain entries with different data types:
+   ```
+    let user = [
+        "John", 
+        "Public", 
+        32,
+        john@email.com,
+        true
+    ];
+   ```
+
+An empty array can also be created:
+   ```
+    let user = [];      // empty array
+   ```
+
+An array can also be created using a constructor function with `new`:
+   ```
+    let user = new Array();      // empty array
+   ```
+
+Arrays can also be attached with a certain size, but this is not really necessary since an array can grow dynamically at runtime:
+   ```
+    let user = new Array(12);      // 12 undefined elements
+   ```
+
+Specifying the length of an array is only possible if the constuctor function of `Array()` is called with a single decimal value as argument:
+   ```
+    let user = new Array("Ali", "Jane", "Pedro");
+   ```
+
+For the arrays with `array()` the keyword `new` can also be omitted. The notation with the square brackets `[]` and without `new` is the array literal notation, and the one with `new` is the constructor notation.
+
+
