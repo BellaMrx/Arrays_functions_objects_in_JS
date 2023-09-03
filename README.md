@@ -5,7 +5,7 @@
 ---------------------------------------------
 
 ## Content
- 1. Functions in JavaScript
+ 1. Functions
  2. Arrays
  3. 
  4. 
@@ -380,5 +380,83 @@ Specifying the length of an array is only possible if the constuctor function of
    ```
 
 For the arrays with `array()` the keyword `new` can also be omitted. The notation with the square brackets `[]` and without `new` is the array literal notation, and the one with `new` is the constructor notation.
+
+
+## Access to the individual elements in the array
+Access to the individual elements of an array is done with the square brackets and the corresponding index number. The first element in an array always has the index `[0]`, the second element the index `[1]` and so on.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_9/script.js) --> **Examples/Part_9/...** 
+   ```
+    let user = [
+        "Ali",      // [0]      
+        "Jane",     // [1]
+        "Pedro"     // [2]
+    ];
+
+    console.log(user[1]);       // Output: Jane
+    let name01 = user[0];       // name01 = "Ali"
+    console.log(name01);        // Output: Ali
+    user[2] = "Pepito";         // "Pedro" is overwritten
+    console.log("user[0] = " + user[0]);    // Output: user[0] = Ali
+    console.log("user[1] = " + user[1]);    // Output: user[1] = Jane
+    console.log("user[2] = " + user[2]);    // Output: user[2] = Pepito
+   ```
+
+This is an example of how to use the `Date` object and the `getDay()` method, with an array (containing all the days of the week), to get the current day of the week:
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_10/script.js) --> **Examples/Part_10/...** 
+   ```
+    let date = new Date();
+    let day = datum.getDay();
+    let weekday = [
+        "Sunday",       // weekday[0]
+        "Monday",       // weekday[1]
+        "Tuesday",      // weekday[2]
+        "Wednesday",    // weekday[3]
+        "Thursday",     // weekday[4]
+        "Friday",       // weekday[5]
+        "Saturday"      // weekday[6]
+    ];
+    console.log("Today is " + weekday[day]);
+   ```
+
+
+## Multidimensional arrays
+An array can also be used inside another array, usually such structures are represented as an object and not as an array:
+   ```
+    let user = [
+        "phoenix420",       // nickname
+        24,                 // age
+        "ash@phoenix.com",  // e-mail
+        false               // admin privileges
+    ];
+   ```
+This is an array for one user and his characteristics. If now several users with the same data are created, this can be realized with multidimensional arrays:
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_11/script.js) --> **Examples/Part_11/...** 
+   ```
+    let user = [
+        ["phoenix420",          // [0][0]
+            24,                 // [0][1]
+            "ash@phoenix.com",  // [0][2]
+            false               // [0][3]
+        ],
+        ["lord777",             // [1][0]
+            12,                 // [1][1]
+            "cedric@lord.com",  // [1][2]
+            false               // [1][3]
+        ],
+        ["granny",              // [2][0]
+            67,                 // [2][1]
+            "granny@lord.com",  // [2][2]
+            true                // [2][3]
+        ]
+    ];
+    
+    console.log(user[1][0]);    // Output: lord777
+    console.log(user[1][1]);    // Output: 12
+    console.log(user[1][2]);    // Output: cedric@lord.com
+    console.log(user[1][3] ? "Admin" : "User"); // Output: User
+   ```
 
 
