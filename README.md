@@ -483,7 +483,7 @@ Here holes were created for the elements `user[2]` and `user[4]`, so the content
 
 Arrays can be traversed more comfortably with the **for ... in** and **for... of** loop.
 
-### for ... in
+ - for ... in
    ```
     let user = [
         "Ali",      // [0]      
@@ -496,7 +496,7 @@ Arrays can be traversed more comfortably with the **for ... in** and **for... of
     }
    ```
 
-### for... of
+ - for... of
    ```
     let user = [
         "Ali",      // [0]      
