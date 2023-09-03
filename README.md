@@ -460,3 +460,62 @@ This is an array for one user and his characteristics. If now several users with
    ```
 
 
+## Add or remove new elements from an array
+There are several methods for adding and removing elements in arrays. Of course, it is also possible to use the index operator, but this can produce undefined holes in the array.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_12/script.js) --> **Examples/Part_12/...** 
+   ```
+    let user = [
+        "Ali",      // [0]      
+        "Jane",     // [1]
+        "Pedro"     // [2]
+    ];
+
+    user[3] = "Wiktoria";
+    user[5] = "Yui";
+    user[2] = undefined;    // delete value
+
+    for (let i = 0; i < user.length; i++) {
+        console.log(user[i]);
+    }
+   ```
+Here holes were created for the elements `user[2]` and `user[4]`, so the content is `undefined`. It is possible to check this in a loop (`=undefined`) to assign the element to the empty space to close the hole. But in practice it is better not to create holes. Here the `for` loop also used the `length` property, which contains the number of elements in an array.
+
+Arrays can be traversed more comfortably with the **for ... in** and **for... of** loop.
+
+### for ... in
+   ```
+    let user = [
+        "Ali",      // [0]      
+        "Jane",     // [1]
+        "Pedro"     // [2]
+    ];
+
+    for (let n in user) {
+        console.log(user[n]);
+    }
+   ```
+
+### for... of
+   ```
+    let user = [
+        "Ali",      // [0]      
+        "Jane",     // [1]
+        "Pedro"     // [2]
+    ];
+
+    for (let n of user) {
+        console.log(n);
+    }
+   ```
+The **for... of** loop is a bit more comfortable than the **for ... in** loop. This is because with the **for... of** loop only the property values of the iterable properties can be traversed and thus `user[n]` can be omitted.
+
+### Short overview of common methods for adding or removing elements in the array
+| Method     | Description                           |
+|----------- | ------------------------------------- |
+| `pop()`    | last element in the array is removed |
+| `push()`   | a new element is added to the end of the array |
+| `shift`    | removes the first element in the array |
+| `unshift`  | inserts an element at the beginning of the array |
+| `slice`    | extract elements from an array |
+| `splice`   | add, replace or delete element(s) at any position in the array |
