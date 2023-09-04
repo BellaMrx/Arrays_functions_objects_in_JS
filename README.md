@@ -511,14 +511,14 @@ Arrays can be traversed more comfortably with the **for ... in** and **for... of
 The **for... of** loop is a bit more comfortable than the **for ... in** loop. This is because with the **for... of** loop only the property values of the iterable properties can be traversed and thus `user[n]` can be omitted.
 
 ### Short overview of common methods for adding or removing elements in the array
-| Method     | Description                           |
-|----------- | ------------------------------------- |
-| `pop()`    | last element in the array is removed |
-| `push()`   | a new element is added to the end of the array |
-| `shift`    | removes the first element in the array |
-| `unshift`  | inserts an element at the beginning of the array |
-| `slice`    | extract elements from an array |
-| `splice`   | add, replace or delete element(s) at any position in the array |
+| Method       | Description                           |
+|------------- | ------------------------------------- |
+| `pop()`      | last element in the array is removed |
+| `push()`     | a new element is added to the end of the array |
+| `shift()`    | removes the first element in the array |
+| `unshift()`  | inserts an element at the beginning of the array |
+| `slice()`    | extract elements from an array |
+| `splice()`   | add, replace or delete element(s) at any position in the array |
 
  - `pop()`
 	- always removes the last element in the array and therefore takes no argument
@@ -554,4 +554,72 @@ The **for... of** loop is a bit more comfortable than the **for ... in** loop. T
     for (let n of user) {
         console.log(n);
     } // Output:  Ali, Jane, Pedro, Wiktoria, Yui
+   ```
+
+- `shift()` 
+    - removes the first element in the array
+
+   ```
+    let user = ["Pedro", "Wiktoria", "Yui", "Jane", "Ali"];
+
+    let n = user.shift(); // remove first element -> Pedro
+    console.log(n + " has been removed")
+    user.shift(); // remove first element again
+    console.log(user.length); // Output: 3
+
+    for (let n of user) {
+        console.log(n);
+    } // Output:  Yui, Jane, Ali
+   ```
+
+- `unshift()`
+    - inserts an element at the beginning of the array
+
+   ```
+    let user = []; // empty array
+
+    user.unshift("Ali");
+    user.unshift("Jane");
+    console.log(user.length); // Output: 2
+    let size = user.unshift("Pedro", "Wiktoria", "Yui");
+    console.log(size) // Output: 5
+
+    for (let n of user) {
+        console.log(n);
+    } // Output:  Pedro, Wiktoria, Yui, Jane, Ali
+   ```
+
+- `slice()`
+    - extract elements from an array 
+
+   ```
+    let user = ["Ali", "Jane", "Pedro", "Wiktoria", "Yui"];
+    console.log(user.slice(2, 4)); // Output: Pedro, Yui
+   ```
+
+- `splice()`
+    - add, replace or delete element(s) at any position in the array 
+    - several arguments are passed to the method =>
+	- the first one is the relevant position where the new element will be added, removed or replaced
+	- the second argument gives the number of elements to be deleted starting from this position
+	- 0 is used when elements are to be inserted
+	- the remaining arguments represent the elements that will be added or replaced in the array
+    
+   ```
+    let user = ["Ali", "Jane", "Pedro"];
+
+    user.splice(2, 0, "Yui"); // insert at user[2]
+
+    for (let n of user) {
+        console.log(n);
+    } // Output: Ali, Jane, Yui, Pedro
+
+    let del = user.splice(1, 2); // [1]&[2] delete
+    console.log(del + " have been deleted!");
+    user.splice(1, 0, "Wiktoria", "John"); // insert 2 elements
+    user.splice(0, 1, "Mohammed") // replace user[0] with Mohammed
+
+    for (let n of user) {
+        console.log(n);
+    } // Output: Mohammed, Wiktoria, John, Pedro
    ```
