@@ -519,3 +519,39 @@ The **for... of** loop is a bit more comfortable than the **for ... in** loop. T
 | `unshift`  | inserts an element at the beginning of the array |
 | `slice`    | extract elements from an array |
 | `splice`   | add, replace or delete element(s) at any position in the array |
+
+ - `pop()`
+	- always removes the last element in the array and therefore takes no argument
+	- the return value is the last element or `undefined` (if no element is left in the array)
+
+   ```
+    let user = ["Ali", "Jane", "Pedro", "Wiktoria", "Yui"]; // array
+
+    let n = user.pop(); // remove last element -> Yui
+    console.log(n + " has been removed")
+    user.pop(); // remove last element again -> Wiktoria
+    console.log(user.length); // Output: 3
+
+    for (let n of user) {
+        console.log(n);
+    } // Output:  Ali, Jane, Pedro
+   ```
+
+ - `push()`
+	- adds one or more elements to the end of the array
+	- the element to be added is passed as argument
+	- the method returns the length of the array
+
+   ```
+    let user = []; // empty array
+
+    user.push("Ali");
+    user.push("Jane");
+    console.log(user.length); // Output: 2
+    let size = user.push("Pedro", "Wiktoria", "Yui");
+    console.log(size) // Output: 5
+
+    for (let n of user) {
+        console.log(n);
+    } // Output:  Ali, Jane, Pedro, Wiktoria, Yui
+   ```
