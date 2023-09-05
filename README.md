@@ -7,7 +7,7 @@
 ## Content
  1. Functions
  2. Arrays
- 3. 
+ 3. Strings and regular expressions
  4. 
  5. 
  6. 
@@ -696,10 +696,54 @@ The `find()` method returns the value of the element of an array (or `undefined`
  [More methods on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 
-# Strings and regular expressions
+# 3. Strings and regular expressions
 Strings are usually the most common type of data used. 
 
 ### the inner structure of a string
+The internal structure of strings is similar to arrays. The first character of a string starts with the index 0.
 | H | E | L | L | O |   | W | O | R | L | D |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|
+
+
+## Useful functions for strings
+Web forms often check the length of the input strings in an `input` field. For this purpose there is the `length` property which contains the number of characters of a string.
+
+   ```
+    let hello = "Hello world";
+    console.log(hello.length);  // Output: 11
+   ```
+
+For extracting strings there are two methods `substring()` and `substr()`. Both methods expect as first argument the start index from where the string is to be extracted. If no second argument is given, the string is extracted from the start index to the end. If a second argument is given, for `substring()` it is the index to extract to. For `substr()` the second argument is the number of characters to extract at the start index.
+
+   ```
+    let hello = "Hello world";
+    let pos1 = hello.indexOf("");
+
+    console.log(hello.substring(pos1 + 1));     // Output: World
+    console.log(hello.substr(3, 2));            // Output: lo
+    console.log(hello.substring(0 + pos1));     // Output: Hello
+   ```
+
+
+## Apply regular expressions to strings  
+Regular expressions are used to describe a pattern of strings in order to formulate a search expression. A regular expression is a formal language that can be used to describe a set of strings.
+
+Regular expressions are objects of type `RegExp` and can be created either as a constructor function `new RegExp()` or as a literal notation.
+
+   ```
+    let txt = "In this text is searched";
+    let regEx01 = /text/;               // Literal notation
+    let regEx02 = new RegExp(/will/);   // Constructor function
+    let n01 = txt.search(regEx01);      // Search for "text" in txt
+    console.log('"text" found at position ' + n01);
+    let n02 = txt.search(regEx02);      // search for "will" in txt
+    console.log('"will" found at position ' + n02);
+    let newText = txt.replace(regEx01, "paragraph")     // search and replace
+    console.log(newText);               // Output: In this paragraph is searched
+   ``` 
+
+#### Besides the properties and methods shown here, there are many more options available.
+
+
+# 4. Object-oriented programming
