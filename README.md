@@ -623,3 +623,74 @@ The **for... of** loop is a bit more comfortable than the **for ... in** loop. T
         console.log(n);
     } // Output: Mohammed, Wiktoria, John, Pedro
    ```
+
+
+## Sort arrays
+To sort elements in the array there is the `sort()` method. 
+
+   ```
+    const months = ['March', 'Jan', 'Feb', 'Dec'];
+    months.sort();
+    console.log(months);	// Output: ["Dec", "Feb", "Jan", "March"]
+   ```
+
+Here a separate function is written that sets the sort criterion. The comparison function is defined with two parameters, which are called internally in pairs for the values of the array when `sort()` is called. With a corresponding return value of *-1, 1, 0* `sort()` takes care that dsa array is sorted. *-1* if the value is greater than the second value, the opposite happened with *1*. With a return value of *0* both values are equal.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_13/script.js) --> **Examples/Part_13/...**   
+   ```
+    function compare(val1, val2) {
+        if (val1 < val2) {
+            return -1; 		// va1 is smaller than val2
+        } else if (val1 > val2) {
+            return 1; 		// val1 is greater than val2
+        } else {
+            return 0;	 	// val1 and val2 are equal
+        }
+    }
+
+    let user = [
+        "Jane",
+        "Yui",
+        "John",
+        "Ali",
+        "Maya"
+    ];
+
+    user.sort(compare);
+    for (let n of user) {
+	    console.log(n);
+    }		// Output: Ali, Jane, John, Maya, Yui
+   ```
+
+
+## Searching in arrays
+With `indexOf()` it is possible to search directly in the array for a specific element. The element to be searched is given as argument. It is also possible to use a second argument, from which index the search should be started. If *-1* is returned, then the element is not contained in the array.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_14/script.js) --> **Examples/Part_14/...**   
+   ```
+    const user = ['Ali', 'Jane', 'Pedro', 'Wiktoria', 'Yui'];
+
+    console.log(user.indexOf('Jane'));      // Output: 1
+
+    // start from index 2
+    console.log(user.indexOf('Jane', 2));   // Output: 4
+
+    // element not contained in the array
+    console.log(user.indexOf('John'));      // Output: -1
+   ```
+The `indexOf()` method starts searching at the beginning of the array. With `lastIndexOf()` the search can be started at the end of the array.
+The `find()` method returns the value of the element of an array (or `undefined`) that satisfies the condition of a provided test function. The `findIndex()` method returns the index of the first element in the array that satisfies the provided test function, or *-1*.
+
+
+### More methods for arrays
+
+| Method        | Description                                 |
+|-------------- | ------------------------------------------- |
+| `concat()`    | appends elements or arrays to another array |
+| `copyWithin()`| Copy elements within the array              |
+| `filter()`    | Elements can be sorted out from the array according to a certain filter condition  |
+| `join()`      | converts an array into a string             |
+| `reverse()`   | sorts the elements in the array into the reverse order |
+| `splice()`, `toLocaleString()`, `valueOf`    | arrays can be converted into strings |
+
+ [More methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
