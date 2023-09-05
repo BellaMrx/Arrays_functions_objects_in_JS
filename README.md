@@ -1,6 +1,6 @@
 # Arrays_functions_objects_in_JS
 
- Arrays, functions and objects in JavaScript
+ Arrays, functions and objects in JavaScript.
 
 ---------------------------------------------
 
@@ -8,11 +8,7 @@
  1. Functions
  2. Arrays
  3. Strings and regular expressions
- 4. 
- 5. 
- 6. 
- 7. 
-
+ 4. Object-oriented programming 
 
 ---------------------------------------------
 
