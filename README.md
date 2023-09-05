@@ -693,4 +693,13 @@ The `find()` method returns the value of the element of an array (or `undefined`
 | `reverse()`   | sorts the elements in the array into the reverse order |
 | `splice()`, `toLocaleString()`, `valueOf`    | arrays can be converted into strings |
 
- [More methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+ [More methods on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+
+# Strings and regular expressions
+Strings are usually the most common type of data used. 
+
+### the inner structure of a string
+| H | E | L | L | O |   | W | O | R | L | D |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|
