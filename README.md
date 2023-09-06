@@ -1,6 +1,6 @@
 # Arrays_functions_objects_in_JS
 
- Arrays, functions and objects in JavaScript.
+ Introduction: Arrays, functions and objects in JavaScript
 
 ---------------------------------------------
 
@@ -743,3 +743,58 @@ Regular expressions are objects of type `RegExp` and can be created either as a 
 
 
 # 4. Object-oriented programming
+In simple terms, objects in JavaScript are complex and compound variables with properties and methods. The properties are called attributes or proberties and the methods are sometimes called object methods. This information, such as properties and methods, can be accessed with the object.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_15/script.js) --> **Examples/Part_15/...**   
+   ```
+    let user = {
+        nickname: "Phoenix420",         // nickname
+        alter: 24,                      // age
+        admin: false,                   // admin privileges
+        print: function() {
+            console.log("Nickname : " + this.nickname);
+            console.log("Alter    : " + this.alter);
+            console.log("Admin    : " + this.isAdmin());
+        },
+        isAdmin: function() {
+            return this.admin ? "Yes" : "No";
+        }
+    };
+    user.print();
+   ```
+
+This is one of several ways to create an object. Objects are realized using key-value pairs. Key and value are separated by a colon `:`. The key is used to access the corresponding values. A value itself can be a literal, function or method of the object.
+Everything after the assignment to `let user` between the curly braces is the content of the object. Here there are three properties `nickmane`, `age` and `admin` and two methods with `print` and `isAdmin`. Methods are introduced with the keyword `function`. Since ES6 the keyword can be omitted. The individual properties and methods of the object must be separated with commas `,`. The value of a property or method is noted behind a colon `:`.
+
+
+## Create objects via constructor functions
+With a constuctor function and the keyword `new` a new object is defined and created. With this constuctor function any number of copies of the object can be created. A constuctor function does not differ in appearance from a normal function, therefore it is recommended to capitalize the first letter.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_16/script.js) --> **Examples/Part_16/...**   
+   ```
+    function User(nickname, age, admin) {
+        this.nickname = nickname;
+        this.age = age;
+        this.admin = admin;
+        this.printUser = function() {
+            console.log("Nickname : " + this.nickname);
+            console.log("Age      : " + this.age);
+            console.log("Admin    : " + this.isAdmin());
+        }
+        this.isAdmin = function() {
+            return this.admin ? "Yes" : "No";
+        }
+    };
+
+    let user01 = new User("Phoenix420", 24, false);
+    let user02 = new User("Ced_Lord", 11, true);
+    user01.printUser();
+    user02.printUser();
+   ```
+By calling the keyword `new` the function becomes a constuctor function, thereupon the function creates an object and returns it. A `return` is not needed, because the new object is returned implicitly. The property and methods within the constuctor function are accessed via the keyword `this`.
+
+
+
+
+
+
