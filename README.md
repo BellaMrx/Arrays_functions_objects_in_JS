@@ -9,7 +9,7 @@
  2. Arrays
  3. Strings and regular expressions
  4. Object-oriented programming 
-
+ 5. More global objects
 ---------------------------------------------
 
 # 1. Functions in JavaScript
@@ -437,8 +437,8 @@ This is an array for one user and his characteristics. If now several users with
             "ash@phoenix.com",  // [0][2]
             false               // [0][3]
         ],
-        ["lord777",             // [1][0]
-            12,                 // [1][1]
+        ["Ced_Lord",             // [1][0]
+            11,                 // [1][1]
             "cedric@lord.com",  // [1][2]
             false               // [1][3]
         ],
@@ -792,6 +792,162 @@ With a constuctor function and the keyword `new` a new object is defined and cre
     user02.printUser();
    ```
 By calling the keyword `new` the function becomes a constuctor function, thereupon the function creates an object and returns it. A `return` is not needed, because the new object is returned implicitly. The property and methods within the constuctor function are accessed via the keyword `this`.
+
+
+## Create objects with the class syntax
+The keyword `class` was introduced to be able to define a class with it and the keyword `function` is no longer needed for the method.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_17/script.js) --> **Examples/Part_17/...**   
+   ```
+    class User {
+        constructor(nickname, age, admin) {
+            this.nickname = nickname;
+            this.age = age;
+            this.admin = admin;
+        }
+        print() {
+            console.log("Nickname : " + this.nickname);
+            console.log("Age      : " + this.age);
+            console.log("Admin    : " + this.isAdmin());
+        }
+        isAdmin() {
+            return this.admin ? "Yes" : "No";
+        }
+    };
+
+    let user01 = new User("Phoenix420", 24, false);
+    let user02 = new User("Ced_Lord", 11, true);
+    user01.print();
+    user02.print();
+   ```
+The `constuctor()` method is called implicitly when a new object instance of the corresponding class is created. The `constuctor() ` method corresponds in principle to that of the constuctor function. Here, too, no `return` is required because the object instance is returned implicitly.   
+
+
+## Access to the object properties and methods: setter and getter
+For access to object properties and methods one usually uses the dot notation:
+
+   ```
+   ...
+    let user01 = new User("Phoenix420", 24, false);
+    // dot notation:
+    user01.print();
+    console.log(user01.nickame);    // Output: Phoenix420
+   ```
+
+Another way is to put the properties and methods in square brackets `[]` between single `''` or double `""` quotes:
+
+   ```
+   ...
+    let user01 = new User("Phoenix420", 24, false);     
+    // bracket notation:
+    user01.["print"]();
+    console.log(user01["nickame"]);    // Output: Phoenix420
+   ```
+
+Which notation is used, everyone must decide for himself, but it should be uniform. But there are individual cases in which only the bracket notation can be used. That is if properties or methods contain e.g. a hyphen. Without the square bracket otherwise an error could occur, because the hyphen is interpreted as a minus sign.
+
+In this way, the properties of an object can now be changed directly:
+
+   ```
+   ...
+    user01.nickname = "Granny";
+    user01.age = 67;
+    user01.admin = "root";
+   ```
+
+Here you can see that it is now also possible to enter some nonsense.
+
+In object-oriented programming, so-called setter methods are usually used to change individual properties, and getter methods are used to retrieve individual properties. With setter methods, it is also possible to check the validity of the value passed.
+
+JavaScript provides the keywords `set` and `get` for such method:
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_18/script.js) --> **Examples/Part_18/...**   
+   ```
+    class User {
+        constructor(nickname, age, admin) {
+            this._nickname = nickname;
+            this._age = age;
+            this._admin = admin;
+        }
+        isAdmin() {
+            return this._admin ? "Yes" : "No";
+        }
+        set nickname(name) {
+            if (typeof name === "string") {
+                this._nickname = name;
+            } else {
+                console.log("Error: No string!")
+            }
+        }
+        get nickname() {
+            return this._nickname;
+        }
+        set age(old) {
+            if (typeof old === "number") {
+                this.age = old;
+            } else {
+                console.log("Error: No integer!")
+            }
+        }
+        get age() {
+            return this._age;
+        }
+        set admin(adm) {
+            if (typeof adm === "boolean") {
+                this._admin = adm;
+            } else {
+                console.log("Error: true or false!")
+            }
+        }
+        get admin() {
+            return this._admin;
+        }
+    };
+
+    let user01 = new User("Phoenix420", 24, false);
+    // Setter methods in use
+    user01.nickname = "Granny";     // set nickname("Granny")
+    user01.alter = 67;              // set age(67)
+    user01.admin = true;            // set admin(true)
+    // Getter methods in use
+    console.log(user01.nickname);   // get nickname()
+    console.log(user01.alter);      // get age()
+    console.log(user01.admin);      // get admin();
+   ```
+To avoid naming conflicts between properties and methods, it is common to start the properties with an underscore (`_age`). 
+
+
+## The keyword `this
+In simple terms, `this` is a kind of property which, when called, is assigned the value of the object with which it is called; it is, so to speak, a reference to itself. `this` is an implicit parameter that is automatically available.
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_19/script.js) --> **Examples/Part_19/...**   
+   ```
+    "use strict";
+    class SimpleClass {
+        simple() {
+            console.log(this);      // Output: SimpleClass
+        }
+    };
+
+    function simpleFunction() {
+        console.log(this);          // Output: undefined
+    }
+
+    let val1 = new SimpleClass();
+    val1.simple();
+    simpleFunction();
+    console.log(this);              // Output: Window
+   ```
+
+Here `this` is notated in a class, a global function and the global environment. Within the class, `this` refers to the instantiated object `SimpleClass` itself. For the global function, the execution context is `undefined` in strict mode. Without the strict mode, it would be the `window` object when the JS is executed in the web browser. When using `this` globally, on the other hand, the global `window` object is used by default.
+
+`this` is a reference to the owner of the object. And this is necessary because there can be and are more instances of an object. Within methods of a created object, this is important because it ensures that if there are multiple instances of the same object, the stored properties of the individual instances can be accessed. After all, each instance of an object has its own properties and does not share them with another instance.
+
+
+# 5. More global objects
+
+
+
 
 
 

@@ -4,8 +4,8 @@ let user = [
         "ash@phoenix.com",  // [0][2]
         false               // [0][3]
     ],
-    ["lord777",             // [1][0]
-        12,                 // [1][1]
+    ["Ced_Lord",             // [1][0]
+        11,                 // [1][1]
         "cedric@lord.com",  // [1][2]
         false               // [1][3]
     ],
