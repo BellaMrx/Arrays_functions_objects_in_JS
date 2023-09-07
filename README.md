@@ -945,8 +945,144 @@ Here `this` is notated in a class, a global function and the global environment.
 
 
 # 5. More global objects
+Predefined objects are the native objects, these provided ready objects include: **Array, Boolean, Date, Function, Map, Set, Math, Number, RegExp, String** and **Object**.
+
+## **Object**
+All other objects derive from this object. Each object is of the type `Object` and can belong beyond that in more specific types (e.g. **String**). The `Object` object provides properties and methods, it is in principle only a container for data like strings or numbers, or also function objects.
+
+   ```
+    let data = new Object();
+    data.name = "Jane Doe";
+    data.residence = "New York";
+    data.accountNr = 123456789;
+   ```
+or
+
+   ```
+    let data = {
+        name: "Jane Doe",
+        residence: "New York",
+        accountNr: 123456789
+    }   
+   ```
+
+## **Number**, **String**, **Boolean** (primitive data types)
+primitive version:
+
+   ```
+    let iVal = 2468;
+    console.log(typeof iVal);      // Output: number
+    let str = "text";
+    console.log(typeof str);       // Output: string
+    let bool = false;
+    console.log(typeof bool);      // Output: boolean
+   ```
+Object version:
+
+   ```
+    let iOVal = new Number(2468);
+    console.log(typeof iOVal);      // Output: object
+    let oStr = new String("text");
+    console.log(typeof oStr);       // Output: object
+    let oBool = new Boolean(false);
+    console.log(typeof oBool);      // Output: object  
+   ```
+
+However, in practice it is recommended not to use the object version, but the primitive form. Because the object version only makes the code more complicated and can speed up the script.
+
+It becomes more complicated when a variable with the primitive data type and an object version are compared:
+
+ [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_20/script.js) --> **Examples/Part_20/...**   
+   ```
+    let iVal = 2468;
+    let iOVal = new Number(2468);
+
+    if (iVal == iOVal) {
+        console.log("The value of iVal is equal to iOVal.");
+    } else {
+        console.log("The value of iVal is not equal to iOVal.");
+    }
+
+    if (iVal === iOVal) {
+        console.log("The value and type of iVal is equal to iOVal.");
+    } else {
+        console.log("The value and type of iVal is not equal to iOVal.");
+    }
+   ```
+When comparing with the `==` operator `true` is returned because an automatic conversion is done. When comparing with `==` `false` is returned, the values are the same but not the type.
 
 
+## **Date** object
+The **Date** object provides an extensive set of methods for different calculations of date and time. To use the **Date** object, a new object is created with the `newDate()` constructor function.
+
+   ```
+    let date = new Date();
+    console.log(date);              // current date
+    console.log(Date.parse(date));  // since 1.1.1970, 0:00
+   ```
+
+
+## **Math** object
+For different types of calculations there is the **Math** object with useful properties and methods. The properties and methods can be created directly via `Math.property()` and `Math.method()` respectively.
+
+   ```
+    console.log("Konstante für PI : " + Math.PI);   // 3.141592653589793
+
+    let r = 12;
+    let a = r * r * Math.PI;    // circle area calculation
+    console.log(a);
+
+    console.log(Math.random());     // generate random number between 0 and 1
+   ```
+
+## **Map** object
+With **Map** an ordered list of key-value pairs can be created. Here the keys and the values can consist of any data type.
+
+   ```
+    let postcode = new Map([
+        [86150, "Augsburg"],
+        [80331, "Munich"],
+        [10117, "Berlin"],
+        [50667, "Cologne"]
+    ]);
+
+    let postcodeTmp = postcode.get(80331);
+    console.log(postcodeTmp); // Output: Munich
+    // add key-value pair
+    postcode.set(60306, "Frankfurt");
+   ```
+
+
+## **Set** object
+A **Set** object is a collection of values of any type, stored in the order in which they are added. Each value is unique in a **Set**. An algorithm internally checks for equality before adding. Single elements can be added with `add()`. With `has()` it can be checked if an element already exists in the **set**. The number of elements can be determined with ``size()`.
+
+   ```
+    let mySet = new Set([1, 3, 5]);
+    mySet.add(7); // added at the back
+    mySet.add(3); // will not be added, already present
+    mySet.add("some text"); // added at the back
+
+    // check
+    console.log(mySet.has(5)); // = true
+    console.log(mySet.has(9)); // = false
+    console.log(mySet.size); // = 5
+
+    // iterate through a set and output
+    for (let item of mySet) console.log(item);
+
+    // delete element
+    mySet.delete(3);
+    mySet.delete("some text");
+   ```
+
+---------------------------------------------------------------------
+
+On my Twitter account [@bella_mrx](https://twitter.com/bella_mrx) you can find more useful stuff about JavaScript and web development. 
+
+Or check out my [GitHub](https://github.com/BellaMrx) profile, you'll find even more guides there.
+
+Thanks for reading. 
+I hope you enjoyed it or at least learned something.
 
 
 
