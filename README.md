@@ -917,7 +917,7 @@ JavaScript provides the keywords `set` and `get` for such method:
 To avoid naming conflicts between properties and methods, it is common to start the properties with an underscore (`_age`). 
 
 
-## The keyword `this
+## The keyword `this`
 In simple terms, `this` is a kind of property which, when called, is assigned the value of the object with which it is called; it is, so to speak, a reference to itself. `this` is an implicit parameter that is automatically available.
 
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_19/script.js) --> **Examples/Part_19/...**   
