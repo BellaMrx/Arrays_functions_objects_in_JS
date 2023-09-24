@@ -1077,12 +1077,27 @@ A **Set** object is a collection of values of any type, stored in the order in w
 
 ---------------------------------------------------------------------
 
-On my Twitter account [@bella_mrx](https://twitter.com/bella_mrx) you can find more useful stuff about JavaScript and web development. 
+## The end
+This is only an introduction to JavaScript functions, arrays and objects, there is still far more to know about them. But these are already one of the most important topics everyone should know. 
 
-Or check out my [GitHub](https://github.com/BellaMrx) profile, you'll find even more guides there.
+If you don't know HTML, CSS or JavaScript yet, have a look here:
+  - [WebDevelopment Basics](https://github.com/BellaMrx/WebDevelopment_Basics) - Basics Guide for web developers
+  - [HTML Guide](https://github.com/BellaMrx/HTML_Guide) - Detailed guide about HTML5 (all basics for HTML)
+  - [HTML Cheat Sheets](https://github.com/BellaMrx/HTML_Cheat_Sheets) - All HTML5 elements and their attributes
+  - [CSS Guide](https://github.com/BellaMrx/CSS_Guide) - Detailed guide about CSS (Introduction to CSS, CSS Selectors, Inheritance and the cascade, CSS Box Model, CSS Positioning, Flexbox, Responsive Web Design, CSS Grid Layout, Styling with CSS, Testing and Organizing) 
+  - [Sass and SCSS Basic Guide](https://github.com/BellaMrx/Sass_and_SCSS) - An introduction to the CSS preprocessor Sass
 
-Thanks for reading. 
-I hope you enjoyed it or at least learned something.
+  **JavaScript Basics:**
+
+  1. [JS Introduction](https://github.com/BellaMrx/JS_introduction) - An introduction to JavaScript
+  2. [Arrays, functions, objects in JS](https://github.com/BellaMrx/Arrays_functions_objects_in_JS) - Introduction: Arrays, functions and objects in JavaScript     <-- You are here
+  3. [DOM - Document Object Model](https://github.com/BellaMrx/DOM_Document-Object-Model) -  Introduction to the **DOM** and the **DOM** manipulation - Change web pages dynamically      
+
+Or just visit my GitHub profile, you can find all guides/tutorials there [BellaMrx](https://github.com/BellaMrx)
+
+Thanks for the attention.
+
+#### This is the end, beautiful friend... ;)
 
 
 
