@@ -630,7 +630,7 @@ To sort elements in the array there is the `sort()` method.
     console.log(months);	// Output: ["Dec", "Feb", "Jan", "March"]
    ```
 
-Here a separate function is written that sets the sort criterion. The comparison function is defined with two parameters, which are called internally in pairs for the values of the array when `sort()` is called. With a corresponding return value of *-1, 1, 0* `sort()` takes care that dsa array is sorted. *-1* if the value is greater than the second value, the opposite happened with *1*. With a return value of *0* both values are equal.
+Here a separate function is written that sets the sort criterion. The comparison function is defined with two parameters, which are called internally in pairs for the values of the array when `sort()` is called. With a corresponding return value of *-1, 1, 0* `sort()` takes care that the array is sorted. *-1* if the value is greater than the second value, the opposite happened with *1*. With a return value of *0* both values are equal.
 
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_13/script.js) --> **Examples/Part_13/...**   
    ```
@@ -768,7 +768,7 @@ Everything after the assignment to `let user` between the curly braces is the co
 
 
 ## Create objects via constructor functions
-With a constuctor function and the keyword `new` a new object is defined and created. With this constuctor function any number of copies of the object can be created. A constuctor function does not differ in appearance from a normal function, therefore it is recommended to capitalize the first letter.
+With a constructor function and the keyword `new` a new object is defined and created. With this constructor function any number of copies of the object can be created. A constructor function does not differ in appearance from a normal function, therefore it is recommended to capitalize the first letter.
 
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_16/script.js) --> **Examples/Part_16/...**   
    ```
