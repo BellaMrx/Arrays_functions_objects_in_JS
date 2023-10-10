@@ -370,7 +370,7 @@ Arrays can also be attached with a certain size, but this is not really necessar
     let user = new Array(12);      // 12 undefined elements
    ```
 
-Specifying the length of an array is only possible if the constuctor function of `Array()` is called with a single decimal value as argument:
+Specifying the length of an array is only possible if the constructor function of `Array()` is called with a single decimal value as argument:
    ```
     let user = new Array("Ali", "Jane", "Pedro");
    ```
