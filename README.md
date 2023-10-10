@@ -743,7 +743,7 @@ Regular expressions are objects of type `RegExp` and can be created either as a 
 
 
 # 4. Object-oriented programming
-In simple terms, objects in JavaScript are complex and compound variables with properties and methods. The properties are called attributes or proberties and the methods are sometimes called object methods. This information, such as properties and methods, can be accessed with the object.
+In simple terms, objects in JavaScript are complex and compound variables with properties and methods. The properties are called attributes or properties and the methods are sometimes called object methods. This information, such as properties and methods, can be accessed with the object.
 
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_15/script.js) --> **Examples/Part_15/...**   
    ```
@@ -791,7 +791,7 @@ With a constuctor function and the keyword `new` a new object is defined and cre
     user01.printUser();
     user02.printUser();
    ```
-By calling the keyword `new` the function becomes a constuctor function, thereupon the function creates an object and returns it. A `return` is not needed, because the new object is returned implicitly. The property and methods within the constuctor function are accessed via the keyword `this`.
+By calling the keyword `new` the function becomes a constructor function, thereupon the function creates an object and returns it. A `return` is not needed, because the new object is returned implicitly. The property and methods within the constructor function are accessed via the keyword `this`.
 
 
 ## Create objects with the class syntax
@@ -820,7 +820,7 @@ The keyword `class` was introduced to be able to define a class with it and the 
     user01.print();
     user02.print();
    ```
-The `constuctor()` method is called implicitly when a new object instance of the corresponding class is created. The `constuctor() ` method corresponds in principle to that of the constuctor function. Here, too, no `return` is required because the object instance is returned implicitly.   
+The `constructor()` method is called implicitly when a new object instance of the corresponding class is created. The `constructor() ` method corresponds in principle to that of the constructor function. Here, too, no `return` is required because the object instance is returned implicitly.   
 
 
 ## Access to the object properties and methods: setter and getter
@@ -1054,7 +1054,7 @@ With **Map** an ordered list of key-value pairs can be created. Here the keys an
 
 
 ## **Set** object
-A **Set** object is a collection of values of any type, stored in the order in which they are added. Each value is unique in a **Set**. An algorithm internally checks for equality before adding. Single elements can be added with `add()`. With `has()` it can be checked if an element already exists in the **set**. The number of elements can be determined with ``size()`.
+A **Set** object is a collection of values of any type, stored in the order in which they are added. Each value is unique in a **Set**. An algorithm internally checks for equality before adding. Single elements can be added with `add()`. With `has()` it can be checked if an element already exists in the **set**. The number of elements can be determined with `size()`.
 
    ```
     let mySet = new Set([1, 3, 5]);
