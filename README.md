@@ -285,7 +285,7 @@ For a function without parameters, the empty function brackets `()` must be note
    ```
 
 ## Use functions in a website
-When a button has been clicked (`click` event), it is intercepted with a so-called event listener (`ducoment.addEventListener()`) and then a corresponding JavaScript function (`calculateSum()` and `calculateMultiply()`). In the function, the corresponding values of the `input` element are read, calculated and passed to the JavaScript function (`showResult`) for output, and the output of the calculation then appears in a text box.
+When a button has been clicked (`click` event), it is intercepted with a so-called event listener (`document.addEventListener()`) and then a corresponding JavaScript function (`calculateSum()` and `calculateMultiply()`). In the function, the corresponding values of the `input` element are read, calculated and passed to the JavaScript function (`showResult`) for output, and the output of the calculation then appears in a text box.
 
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_8) --> **Examples/Part_8/calc.js...** 
    ```
