@@ -146,7 +146,7 @@ It is somewhat clearer with the Arrow function notation:
    ```
     let sumAll = (iVal, ...myargs) => {
         let sum = iVal;
-        myargs.forEach((val) => sum +- val);
+        myargs.forEach((val) => sum += val);
         return sum;
     }
    ```
