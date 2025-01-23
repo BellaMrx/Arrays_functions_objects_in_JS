@@ -11,3 +11,12 @@ user[2] = undefined;    // delete value
 for (let i = 0; i < user.length; i++) {
     console.log(user[i]);
 }
+
+/* Output:
+Ali
+Jane
+undefined
+Wiktoria
+undefined
+Yui
+ */

@@ -16,8 +16,8 @@ let user = [
     ]
 ];
 
-console.log(user[1][0]);    // Output: lord777
-console.log(user[1][1]);    // Output: 12
+console.log(user[1][0]);    // Output: Ced_Lord
+console.log(user[1][1]);    // Output: 11
 console.log(user[1][2]);    // Output: cedric@lord.com
 console.log(user[1][3] ? "Admin" : "User"); // Output: User
 

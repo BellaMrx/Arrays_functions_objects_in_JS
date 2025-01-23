@@ -1,10 +1,10 @@
 let user = {
     nickname: "Phoenix420",         // nickname
-    alter: 24,                      // age
+    age: 24,                      // age
     admin: false,                   // admin privileges
     print: function() {
         console.log("Nickname : " + this.nickname);
-        console.log("Alter    : " + this.alter);
+        console.log("Age    : " + this.age);
         console.log("Admin    : " + this.isAdmin());
     },
     isAdmin: function() {

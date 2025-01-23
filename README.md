@@ -449,8 +449,8 @@ This is an array for one user and his characteristics. If now several users with
         ]
     ];
     
-    console.log(user[1][0]);    // Output: lord777
-    console.log(user[1][1]);    // Output: 12
+    console.log(user[1][0]);    // Output: Ced_Lord
+    console.log(user[1][1]);    // Output: 11
     console.log(user[1][2]);    // Output: cedric@lord.com
     console.log(user[1][3] ? "Admin" : "User"); // Output: User
    ```
@@ -474,6 +474,15 @@ There are several methods for adding and removing elements in arrays. Of course,
     for (let i = 0; i < user.length; i++) {
         console.log(user[i]);
     }
+
+    /* Output:
+     Ali
+     Jane
+     undefined
+     Wiktoria
+     undefined
+     Yui
+    */
    ```
 Here holes were created for the elements `user[2]` and `user[4]`, so the content is `undefined`. It is possible to check this in a loop (`=undefined`) to assign the element to the empty space to close the hole. But in practice it is better not to create holes. Here the `for` loop also used the `length` property, which contains the number of elements in an array.
 
