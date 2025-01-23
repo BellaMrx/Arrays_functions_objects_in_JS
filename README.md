@@ -403,7 +403,7 @@ This is an example of how to use the `Date` object and the `getDay()` method, wi
  [Complete Code](https://github.com/BellaMrx/Arrays_functions_objects_in_JS/blob/main/Examples/Part_10/script.js) --> **Examples/Part_10/...** 
    ```
     let date = new Date();
-    let day = datum.getDay();
+    let day = date.getDay();
     let weekday = [
         "Sunday",       // weekday[0]
         "Monday",       // weekday[1]

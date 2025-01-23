@@ -1,5 +1,5 @@
 let date = new Date();
-let day = datum.getDay();
+let day = date.getDay();
 let weekday = [
     "Sunday",       // weekday[0]
     "Monday",       // weekday[1]
